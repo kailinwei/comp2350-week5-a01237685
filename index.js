@@ -26,8 +26,18 @@ const dbConfigHeroku = {
 	reconnect: true
 };
 
+const dbConfigLocal={
+	host: "127.0.0.1",
+	user: "root",
+	password: "2155",
+	multipleStatements: false,
+	reconnect: true
+}
+
 if (process.env.IS_HEROKU){
 	var database = mysql.createPool(dbConfigHeroku);
+}else{
+	var database = mysql.createPool(dbConfigLocal);	
 }
 
 database.getConnection((err, dbConnection) => {
