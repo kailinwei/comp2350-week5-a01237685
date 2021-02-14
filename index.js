@@ -42,7 +42,7 @@ if (process.env.IS_HEROKU){
 	var database1 = mysql.createPool(dbConfigLocal);	
 }
 
-database.getConnection((err, dbConnection) => {
+database1.getConnection((err, dbConnection) => {
 	if (!err) {
 		console.log("Successfully connected to MySQL");
 	}
