@@ -10,6 +10,7 @@ global.include = function(file) {
 
 
 const express = require('express');
+//----i also eidte the database to database 1 on line 40 and 42 as there were saying database has declared here
 const database = include('databaseConnection');
 const router = include('routes/router');
 const mysql = require('mysql');
