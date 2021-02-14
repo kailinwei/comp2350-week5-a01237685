@@ -14,6 +14,17 @@ const database = include('databaseConnection');
 const router = include('routes/router');
 
 const port = process.env.PORT || 3000;
+//mysql://b49b8573e6c1ae:f0c42ed4@us-cdbr-east-03.cleardb.com/heroku_13465a0f5a42ccc?reconnect=true
+
+//------------------------ my code goes here------------------
+const dbConfigHeroku = {
+	host: "us-cdbr-east-03.cleardb.com",
+	user: "b49b8573e6c1ae",
+	password: "f0c42ed4",
+	database: "heroku_13465a0f5a42ccc",
+	multipleStatements: false,
+	reconnect: true
+};
 
 database.getConnection((err, dbConnection) => {
 	if (!err) {
@@ -25,6 +36,8 @@ database.getConnection((err, dbConnection) => {
 	}
 });
 
+
+const dbConfigHeroku
 
 const app = express();
 app.set('view engine', 'ejs');
