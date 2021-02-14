@@ -12,6 +12,7 @@ global.include = function(file) {
 const express = require('express');
 const database = include('databaseConnection');
 const router = include('routes/router');
+const mysql = require('mysql');
 
 const port = process.env.PORT || 3000;
 //mysql://b49b8573e6c1ae:f0c42ed4@us-cdbr-east-03.cleardb.com/heroku_13465a0f5a42ccc?reconnect=true
