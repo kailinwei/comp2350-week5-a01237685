@@ -17,7 +17,7 @@ const mysql = require('mysql');
 
 const port = process.env.PORT || 3000;
 //mysql://b49b8573e6c1ae:f0c42ed4@us-cdbr-east-03.cleardb.com/heroku_13465a0f5a42ccc?reconnect=true
-
+mysql://b49b8573e6c1ae:f0c42ed4@us-cdbr-east-03.cleardb.com/heroku_13465a0f5a42ccc?
 //------------------------ my code goes here------------------
 const dbConfigHeroku = {
 	host: "us-cdbr-east-03.cleardb.com",
@@ -37,9 +37,9 @@ const dbConfigLocal={
 }
 
 if (process.env.IS_HEROKU){
-	var database1 = mysql.createPool(dbConfigHeroku);
+	 database = mysql.createPool(dbConfigHeroku);
 }else{
-	var database1 = mysql.createPool(dbConfigLocal);	
+	 database = mysql.createPool(dbConfigLocal);	
 }
 
 database.getConnection((err, dbConnection) => {
