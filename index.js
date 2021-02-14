@@ -26,6 +26,10 @@ const dbConfigHeroku = {
 	reconnect: true
 };
 
+if (process.env.IS_HEROKU){
+	var database = mysql.createPool(dbConfigHeroku);
+}
+
 database.getConnection((err, dbConnection) => {
 	if (!err) {
 		console.log("Successfully connected to MySQL");
@@ -37,7 +41,7 @@ database.getConnection((err, dbConnection) => {
 });
 
 
-const dbConfigHeroku
+
 
 const app = express();
 app.set('view engine', 'ejs');
